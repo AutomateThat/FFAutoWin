@@ -6,6 +6,7 @@ import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
 import arena.Timeline;
+import mission.Special;
 
 public class Main {
 
@@ -19,6 +20,7 @@ public class Main {
 		Pattern logoMarvel = new Pattern("img/marvellogo.PNG");
 		
 		Timeline timeline = new Timeline(); 
+		Special special = new Special(); 
 			
 	
 		
@@ -39,7 +41,9 @@ public class Main {
 			} 
 		}
 		*/
-		timeline.runTimeline(screen);
+		//timeline.runTimeline(screen);
+		special.runSpecials(screen);
+		
 			
 	}
 		

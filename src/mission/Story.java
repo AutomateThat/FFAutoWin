@@ -8,11 +8,10 @@ import tools.ChooseMission;
 
 public class Story {
 
-	public static void main(String[] args) throws InterruptedException, FindFailed {
-		
-		Screen screen = new Screen(); 	
-		ChooseMission.ChooseChapter(screen,5);
-		ChooseMission.ChooseStage(screen, 9);
+	public static  void runStoryMissions(int chapter, int stage) throws FindFailed, InterruptedException {
+		Screen screen = new Screen(); 
+		ChooseMission.ChooseChapter(screen,chapter);
+		ChooseMission.ChooseStage(screen, stage);
 		int dailyBiometricCount = ChooseMission.dailyBiometricCount(screen); 
 		
 		Pattern start = new Pattern("img/chapters/start.png"); 

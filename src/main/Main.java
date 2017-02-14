@@ -7,6 +7,7 @@ import org.sikuli.script.Screen;
 
 import arena.Timeline;
 import mission.Special;
+import mission.Story;
 
 public class Main {
 
@@ -21,6 +22,7 @@ public class Main {
 		
 		Timeline timeline = new Timeline(); 
 		Special special = new Special(); 
+		Story story = new Story(); 
 			
 	
 		
@@ -42,7 +44,8 @@ public class Main {
 		}
 		*/
 		//timeline.runTimeline(screen);
-		special.runSpecials(screen);
+		//special.runSpecials(screen);
+		//story.runStoryMissions(screen, 2, 3);
 		
 			
 	}

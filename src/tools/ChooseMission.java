@@ -122,6 +122,36 @@ public class ChooseMission {
 		
 	}
 	
+	public static void chooseSpecialMissions(Screen screen, String whichMission, int whichLevel) throws FindFailed{
+		String imgString = " "; 
+		String missionName = " "; 
+		if(whichMission == "paris"){
+			imgString = "img/special/paris.png"; 
+			missionName = "Paris"; 
+		}else if(whichMission =="jungle_boogie"){
+			imgString = "img/special/jungle_boogie.png"; 
+			missionName = "Jungle Boogie"; 
+		}else if(whichMission =="shanghai"){
+			imgString = "img/special/shanghai.png"; 
+			missionName = "Shanghai"; 
+		}else if(whichMission =="alaska"){
+			imgString = "img/special/alaska.png"; 
+			missionName = "Alaska"; 
+		}else if(whichMission =="new_york"){
+			imgString = "img/special/new_york.png"; 
+			missionName = "New York"; 
+		} else {
+			imgString=" "; 
+			missionName = " No Mission Selected"; 
+		}
+		
+		Pattern userChoosePattern = new Pattern(imgString); 
+		screen.click(userChoosePattern); 
+		
+		System.out.println("Mission Name: " + missionName);
+		
+	}
+	
 	public static int dailyBiometricCount(Screen screen) throws FindFailed{
 		int dailyBiometricCount = 0;
 		Pattern daily_biometric_10 = new Pattern("img/chapters/daily_biometric/10.png"); 
@@ -149,6 +179,8 @@ public class ChooseMission {
 		System.out.println("Daily Biometric Count: " + dailyBiometricCount);
 		return dailyBiometricCount; 
 	}
+	
+	
 	
 	public static boolean find(Screen screen, Pattern pattern)
 	{

@@ -44,7 +44,7 @@ public class Main {
 		}
 		*/
 		//timeline.runTimeline(screen);
-		//special.runSpecials(screen);
+		special.runSpecialsUnlimited(screen, null, "paris");
 		//story.runStoryMissions(screen, 2, 3);
 		
 			

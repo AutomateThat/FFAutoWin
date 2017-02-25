@@ -43,8 +43,8 @@ public class Main {
 			} 
 		}
 		*/
-		//timeline.runTimeline(screen);
-		special.runSpecialsUnlimited(screen, null, "paris");
+		timeline.runTimeline(screen);
+		//special.runSpecialsUnlimited(screen, null, "paris");
 		//story.runStoryMissions(screen, 2, 3);
 		
 			

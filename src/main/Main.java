@@ -8,6 +8,7 @@ import org.sikuli.script.Screen;
 import arena.Timeline;
 import mission.Special;
 import mission.Story;
+import arena.CoopPlay;
 
 public class Main {
 
@@ -23,6 +24,7 @@ public class Main {
 		Timeline timeline = new Timeline(); 
 		Special special = new Special(); 
 		Story story = new Story(); 
+		CoopPlay coop_play = new CoopPlay(); 
 			
 	
 		
@@ -43,9 +45,12 @@ public class Main {
 			} 
 		}
 		*/
-		timeline.runTimeline(screen);
+		//timeline.runTimeline(screen);
 		//special.runSpecialsUnlimited(screen, null, "paris");
-		//story.runStoryMissions(screen, 2, 3);
+		Story.runStoryMissions(1, 4, 5);
+		//coop_play.runCoopTickets(screen);
+		
+
 		
 			
 	}

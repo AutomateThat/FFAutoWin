@@ -36,6 +36,7 @@ public class Timeline {
 		if(find(screen, timeline_recommended_heroes)){
 			screen.click(close);
 		}
+
 		screen.click(search_for_opponent);
 		Thread.sleep(1500);
 		
@@ -60,6 +61,7 @@ public class Timeline {
 			Thread.sleep(5000);
 			if(find(screen, shield_safehouse)){
 				screen.click(shield_ok); 
+				System.out.println("Clicked shield safehouse.");
 			}
 			Thread.sleep(6000);
 		}

@@ -9,17 +9,20 @@ import org.sikuli.script.Pattern;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import mission.Story;
+import javax.swing.JPanel;
 
 public class GuiFrame1 {
 
 	private JFrame frame;
 	private JTextField txtFldChapter;
 	private JTextField txtFldStage;
+	private JTextField txtFrequency;
 	
 
 	/**
@@ -63,35 +66,39 @@ public class GuiFrame1 {
 		
 		txtFldChapter = new JTextField();
 		txtFldChapter.setToolTipText("Enter the Chapter Number");
-		txtFldChapter.setBounds(168, 8, 86, 20);
+		txtFldChapter.setBounds(153, 8, 31, 20);
 		frame.getContentPane().add(txtFldChapter);
 		txtFldChapter.setColumns(10);
 		
 		JLabel lblChapter = new JLabel("Chapter #");
-		lblChapter.setBounds(101, 11, 57, 14);
+		lblChapter.setBounds(86, 11, 57, 14);
 		frame.getContentPane().add(lblChapter);
 		
 		JLabel lblStage = new JLabel("Stage #");
-		lblStage.setBounds(264, 11, 46, 14);
+		lblStage.setBounds(194, 11, 46, 14);
 		frame.getContentPane().add(lblStage);
 		
 		txtFldStage = new JTextField();
-		txtFldStage.setBounds(320, 8, 86, 20);
+		txtFldStage.setBounds(239, 8, 31, 20);
 		frame.getContentPane().add(txtFldStage);
 		txtFldStage.setColumns(10);
 		
 		JButton btnStartMissions = new JButton("Start Missions");
 		btnStartMissions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Starting Missions");
+				
 				int chapter = Integer.parseInt(txtFldChapter.getText()); 
 				int stage = Integer.parseInt(txtFldStage.getText());
+				int frequency = Integer.parseInt(txtFrequency.getText());
 			
 				System.out.println("Chapter #: " + chapter);
 				System.out.println("Stage #: " + stage);
-				
+				System.out.println("Frequency: " + frequency);
+
 				new Thread(() -> {
 					try {
-						Story.runStoryMissions(chapter, stage);
+						Story.runStoryMissions(chapter, stage, frequency, 0);
 					} catch (FindFailed | InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -104,6 +111,14 @@ public class GuiFrame1 {
 		});
 		btnStartMissions.setBounds(320, 39, 89, 23);
 		frame.getContentPane().add(btnStartMissions);
+		
+		JLabel lblFrequency = new JLabel("Frequency");
+		lblFrequency.setBounds(280, 11, 57, 14);
+		frame.getContentPane().add(lblFrequency);
+		
+		txtFrequency = new JTextField();
+		txtFrequency.setColumns(10);
+		txtFrequency.setBounds(347, 8, 31, 20);
+		frame.getContentPane().add(txtFrequency);
 	}
-	
 }

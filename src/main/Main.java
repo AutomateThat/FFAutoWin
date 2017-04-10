@@ -47,8 +47,8 @@ public class Main {
 		*/
 		//timeline.runTimeline(screen);
 		//special.runSpecialsUnlimited(screen, null, "paris");
-		Story.runStoryMissions(1, 4, 10, 0);
-		//coop_play.runCoopTickets(screen);
+		//Story.runStoryMissions(1, 4, 10, 0);
+		coop_play.runCoopTickets(screen);
 		
 
 		

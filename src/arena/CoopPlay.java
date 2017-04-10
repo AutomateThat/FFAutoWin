@@ -19,7 +19,7 @@ public class CoopPlay {
 		Pattern completion_reward = new Pattern("img/completion_reward");
 		Pattern claim = new Pattern("img/claim");
 		Pattern progress_reward = new Pattern("img/progress_reward");
-		Pattern reward_acquired = new Pattern("img/progress_reward");
+		Pattern reward_acquired = new Pattern("img/reward_acquired");
 		Pattern coop_finish_notice = new Pattern("img/coop_finish_notice");
 		
 		
@@ -32,14 +32,6 @@ public class CoopPlay {
 		
 		if (find(screen,notice)){
 			screen.click(ok);
-
-		}
-		if (find(screen,completion_reward)){
-			screen.click(claim); 
-			if (find(screen,progress_reward)){
-				screen.click(ok); 
-			}
-			
 		}
 		
 		while(find(screen,coop_finish_notice) == false){
@@ -47,19 +39,19 @@ public class CoopPlay {
 			
 			if(find(screen,progress_100)){
 				screen.click(ok); 
+				Thread.sleep(5000); 
 				screen.click(reward_acquired); 
+				Thread.sleep(5000); 
 				screen.click(claim); 
+				Thread.sleep(7000); 
 				screen.click(ok); 
+				Thread.sleep(3000); 
 				screen.click(start); 
-			}
-			if (find(screen,completion_reward)){
-				screen.click(claim); 
-				if (find(screen,progress_reward)){
-					screen.click(ok); 
-					screen.click(start);
+				if (find(screen,notice)){
+					screen.click(ok);
 				}
-				
 			}
+
 			
 			if(find(screen,coop_finish_notice)){
 				System.out.println("Co-Op Missions Finished");

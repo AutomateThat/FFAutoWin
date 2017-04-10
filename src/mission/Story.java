@@ -67,10 +67,12 @@ public class Story {
 				Thread.sleep(5000);
 				System.out.println("Click repeat button");
 				screen.click(replay); 
+				Thread.sleep(5000);
 				if(find(screen, shield_safehouse)){
 					screen.click(shield_ok); 
+					System.out.println("Clicked shield safe house button");
 				}
-				Thread.sleep(3000);
+				Thread.sleep(1000);
 				storyRunCount++; 
 				System.out.println("The count is now: " + storyRunCount);
 			}

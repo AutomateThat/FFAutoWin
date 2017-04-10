@@ -56,7 +56,7 @@ public class Timeline {
 			if(find(screen, shield_safehouse)){
 				screen.click(ok); 
 			}
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			screen.click(replay);
 			Thread.sleep(5000);
 			if(find(screen, shield_safehouse)){
